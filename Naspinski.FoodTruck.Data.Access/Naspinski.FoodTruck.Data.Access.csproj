@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Naspinski.Maps" Version="1.0.20200222.94026" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Naspinski.FoodTruck.Data\Naspinski.FoodTruck.Data.csproj" />
+  </ItemGroup>
+
+</Project>
