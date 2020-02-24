@@ -6,7 +6,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Menu
     public class MenuItemsModel
     {
         private List<MenuItemModel> _menuItems;
-        public List<CategoryModel> Categories;
+        public List<CategoryModel> Categories { get; set; }
 
         public MenuItemsModel() { }
         public MenuItemsModel(IEnumerable<MenuItemModel> models)

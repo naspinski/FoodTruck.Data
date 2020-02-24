@@ -10,7 +10,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Menu
         public int Id { get; set; }
         public int CategoryId { get; set; }
         public int MenuItemId { get; set; }
-        public IEnumerable<DropDownItem> Options = new List<DropDownItem>();
+        public IEnumerable<DropDownItem> Options { get; set; } = new List<DropDownItem>();
 
         public ComboPartModel() { }
         public ComboPartModel(ComboPart model)
