@@ -31,7 +31,7 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: 'pack'
-    packagesToPack: '**/*Messaging.csproj'
+    packagesToPack: '**/*.csproj'
     versioningScheme: 'byBuildNumber'
 
 - task: NuGetCommand@2
