@@ -27,8 +27,8 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Events
         [Required]
         public string Zip { get; set; }
 
-        public decimal Latitude;
-        public decimal Longitude;
+        public decimal Latitude { get; set; }
+        public decimal Longitude { get; set; }
 
         [JsonIgnore]
         public string GoogleMapsApiKey;
