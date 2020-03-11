@@ -26,7 +26,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Menu
         public bool ExcludeFromOrdering { get; set; } = false;
 
         public CategoryModel() { }
-        public List<MenuItemModel> MenuItems = new List<MenuItemModel>();
+        public List<MenuItemModel> MenuItems { get; set; } = new List<MenuItemModel>();
 
         public CategoryModel(Category model)
         {
