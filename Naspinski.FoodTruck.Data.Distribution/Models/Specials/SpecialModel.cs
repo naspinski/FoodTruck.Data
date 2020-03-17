@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Naspinski.FoodTruck.Data.Distribution.Models.Specials
 {
@@ -20,12 +21,26 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Specials
         public TimeSpan? Begins { get; set; }
         public TimeSpan? Ends { get; set; }
 
+        [Display(Name = "Sunday")]
+        [JsonIgnore]
         public bool IsSunday { get; set; }
+        [Display(Name = "Monday")]
+        [JsonIgnore]
         public bool IsMonday{ get; set; }
+        [Display(Name = "Tuesday")]
+        [JsonIgnore]
         public bool IsTuesday { get; set; }
+        [Display(Name = "Wednesday")]
+        [JsonIgnore]
         public bool IsWednesday { get; set; }
+        [Display(Name = "Thursday")]
+        [JsonIgnore]
         public bool IsThursday { get; set; }
+        [Display(Name = "Friday")]
+        [JsonIgnore]
         public bool IsFriday { get; set; }
+        [Display(Name = "Saturday")]
+        [JsonIgnore]
         public bool IsSaturday { get; set; }
         public bool IsDeleted { get; set; }
 
