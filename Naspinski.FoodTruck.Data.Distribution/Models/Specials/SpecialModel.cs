@@ -29,6 +29,30 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Specials
         public bool IsSaturday { get; set; }
         public bool IsDeleted { get; set; }
 
+        public string[] Days
+        {
+            get
+            {
+                var days = new List<string>();
+                if (IsSunday) days.Add("Sunday");
+                if (IsMonday) days.Add("Monday");
+                if (IsTuesday) days.Add("Tuesday");
+                if (IsWednesday) days.Add("Wednesday");
+                if (IsThursday) days.Add("Thursday");
+                if (IsFriday) days.Add("Friday");
+                if (IsSaturday) days.Add("Saturday");
+                return days.ToArray();
+            }
+        }
+
+        public string DayList
+        {
+            get
+            {
+                return string.Join(", ", Days);
+            }
+        }
+
         public SpecialModel() { }
         public SpecialModel(Special model)
         {
