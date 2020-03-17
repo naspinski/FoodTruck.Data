@@ -27,6 +27,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Specials
         public bool IsThursday { get; set; }
         public bool IsFriday { get; set; }
         public bool IsSaturday { get; set; }
+        public bool IsDeleted { get; set; }
 
         public SpecialModel() { }
         public SpecialModel(Special model)
@@ -42,6 +43,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Specials
             IsWednesday = model.IsWednesday;
             IsFriday = model.IsFriday;
             IsSaturday = model.IsSaturday;
+            IsDeleted = model.Deleted != null;
         }
 
         public Special ToModel()
