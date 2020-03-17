@@ -50,6 +50,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Specials
         public bool IsSaturday { get; set; }
         public bool IsDeleted { get; set; }
 
+        [JsonIgnore]
         public string[] Days
         {
             get
@@ -66,6 +67,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Specials
             }
         }
 
+        [JsonIgnore]
         public string DayList
         {
             get
