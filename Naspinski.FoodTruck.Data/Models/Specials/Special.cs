@@ -1,9 +1,7 @@
 ﻿using Naspinski.Data.Model;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace Naspinski.FoodTruck.Data.Models.Specials
 {
@@ -15,8 +13,8 @@ namespace Naspinski.FoodTruck.Data.Models.Specials
         [Required]
         public string Name { get; set; }
         public string Description { get; set; }
-        public DateTimeOffset? Begins { get; set; }
-        public DateTimeOffset? Ends { get; set; }
+        public TimeSpan? Begins { get; set; }
+        public TimeSpan? Ends { get; set; }
 
         [Required]
         public bool IsSunday { get; set; }

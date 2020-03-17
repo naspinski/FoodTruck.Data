@@ -17,8 +17,8 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Specials
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public DateTime? Begins { get; set; }
-        public DateTime? Ends { get; set; }
+        public TimeSpan? Begins { get; set; }
+        public TimeSpan? Ends { get; set; }
 
         public bool IsSunday { get; set; }
         public bool IsMonday{ get; set; }
@@ -59,8 +59,8 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Specials
             Id = model.Id;
             Name = model.Name;
             Description = model.Description;
-            Begins = model.Begins.HasValue ? model.Begins.Value.DateTime : (DateTime?)null;
-            Ends = model.Ends.HasValue ? model.Ends.Value.DateTime : (DateTime?)null; ;
+            Begins = model.Begins;
+            Ends = model.Ends;
             IsSunday = model.IsSunday;
             IsMonday = model.IsMonday;
             IsTuesday = model.IsTuesday;

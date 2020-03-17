@@ -287,3 +287,4 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 Naspinski.FoodTruck.Data/appsettings.json
+/Naspinski.FoodTruck.Data.Access/appsettings.json
