@@ -10,6 +10,8 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Specials
 {
     public class SpecialModel : IToModel<Special>
     {
+        private const string DateTimeFormat = "hh:mm tt";
+
         [Required]
         public int Id { get; set; }
         public bool IsNew { get { return Id == 0; } }
@@ -19,7 +21,11 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Specials
         public string Description { get; set; }
 
         public TimeSpan? Begins { get; set; }
+        public string BeginsString
+        { get { return TimeSpanToString(Begins); } }
         public TimeSpan? Ends { get; set; }
+        public string EndsString
+        { get { return TimeSpanToString(Ends); } }
 
         [Display(Name = "Sunday")]
         [JsonIgnore]
@@ -101,6 +107,11 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Specials
                 IsFriday = IsFriday,
                 IsSaturday = IsSaturday
             };
+        }
+
+        private string TimeSpanToString(TimeSpan? ts)
+        {
+            return ts.HasValue ? DateTime.Today.Add(ts.Value).ToString(DateTimeFormat) : string.Empty;
         }
     }
 }
