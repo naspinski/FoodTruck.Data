@@ -5,6 +5,7 @@ using Naspinski.FoodTruck.Data.Models.Payment;
 using Naspinski.FoodTruck.Data.Models.Storage;
 using Naspinski.FoodTruck.Data.Models.System;
 using Microsoft.EntityFrameworkCore;
+using Naspinski.FoodTruck.Data.Models.Specials;
 
 namespace Naspinski.FoodTruck.Data
 {
@@ -29,5 +30,6 @@ namespace Naspinski.FoodTruck.Data
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
         public DbSet<DeliveryDestination> DeliveryDestinations { get; set; }
+        public DbSet<Special> Specials { get; set; }
     }
 }

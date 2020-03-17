@@ -1,6 +1,5 @@
 ﻿using Naspinski.Data.Model;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Naspinski.FoodTruck.Data.Models.Events

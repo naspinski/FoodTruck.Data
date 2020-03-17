@@ -9,17 +9,17 @@ namespace Naspinski.FoodTruck.Data.Access.Queries.MenuItems
     public class GetAll : ResultQueryBase<FoodTruckContext, List<MenuItem>>
     {
         private readonly bool _isDeleted;
-        private readonly bool _includeDeleted;
+        private readonly bool _includeDetails;
 
         public GetAll(FoodTruckContext context, bool includeDetails = true, bool isDeleted = false) : base(context)
         {
             _isDeleted = isDeleted;
-            _includeDeleted = includeDetails;
+            _includeDetails = includeDetails;
         }
 
         protected override List<MenuItem> InternalExecute()
         {
-            var set = (!_includeDeleted
+            var set = (!_includeDetails
                 ? _context.MenuItems.AsQueryable()
                 : _context.MenuItems
                     .Include(x => x.Category)
