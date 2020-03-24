@@ -15,7 +15,9 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Menu
             Categories = new List<CategoryModel>();
             foreach (var item in _menuItems)
             {
-                if (!Categories.Any(x => x.Id == item.CategoryId)) Categories.Add(item.Category ?? new CategoryModel());
+                item.CategoryId = item.CategoryId == null ? 0 : item.CategoryId;
+                if (!Categories.Any(x => x.Id == item.CategoryId)) 
+                    Categories.Add(item.Category ?? new CategoryModel() { Id = item.CategoryId ?? 0 });
 
                 var cat = Categories.First(x => item.CategoryId == null ? x.Id == 0 : item.CategoryId == x.Id);
                 item.Category = null;

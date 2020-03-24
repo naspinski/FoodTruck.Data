@@ -40,8 +40,8 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Menu
 
         public class DropDownItem
         {
-            public int Id;
-            public string Name;
+            public int Id { get; set; }
+            public string Name { get; set; }
         }
     }
 }
