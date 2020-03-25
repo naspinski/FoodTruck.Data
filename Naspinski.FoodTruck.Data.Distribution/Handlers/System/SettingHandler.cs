@@ -32,9 +32,11 @@ namespace Naspinski.FoodTruck.Data.Distribution.Handlers.Menu
         
         public SettingModel Upsert(SettingModel model) { throw new NotImplementedException(); }
 
-        public void Restore(int id)
+        public void Restore(int id) { throw new NotImplementedException(); }
+
+        public List<string> GetAvailableSections()
         {
-            throw new NotImplementedException();
+            return new Query.Settings.GetAvailableSections(_context).ExecuteAndReturnResults();
         }
     }
 }
