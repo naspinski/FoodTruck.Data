@@ -8,6 +8,7 @@ namespace Naspinski.FoodTruck.Data
         {
             public const string IsOrderingOn = "IsOrderingOn";
             public const string LogoImageUrl = "LogoImageUrl";
+            public const string BannerImageUrl = "BannerImageUrl";
             public const string FaviconImageUrl = "FaviconImageUrl";
             public const string AppleTouchIconImageUrl = "AppleTouchIconImageUrl";
             public const string Title = "Title";

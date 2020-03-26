@@ -13,6 +13,7 @@ namespace Naspinski.FoodTruck.Data
                 return new List<Setting>()
                 {
                     new Setting() { Name = SettingName.LogoImageUrl, DataType = Constants.DataType.DropdownString, Category = SettingCategory.Images, Value = string.Empty },
+                    new Setting() { Name = SettingName.BannerImageUrl, DataType = Constants.DataType.DropdownString, Category = SettingCategory.Images, Value = string.Empty },
                     new Setting() { Name = SettingName.FaviconImageUrl, DataType = Constants.DataType.DropdownString, Category = SettingCategory.Images, Value = string.Empty },
                     new Setting() { Name = SettingName.AppleTouchIconImageUrl, DataType = Constants.DataType.DropdownString, Category = SettingCategory.Images, Value = string.Empty },
 
