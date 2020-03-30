@@ -22,13 +22,13 @@ namespace Naspinski.FoodTruck.Data.Access.Queries.Subscriptions
         {
             return _context.Subscriptions.Where(x =>
                 (_isEmail == null
-                    || x.Type == (_isEmail.Value ? Subscription.Types.Email : Subscription.Types.Text)
-                ) && (_locations == null
-                    || _locations.Any(y => y.StartsWith(x.Location))
+                    || x.Type.ToString() == (_isEmail.Value ? Subscription.Types.Email.ToString() : Subscription.Types.Text.ToString())
                 ) && (string.IsNullOrWhiteSpace(_subscriber)
                     || x.Subscriber == _subscriber
                 )
-            ).ToList();
+            ).ToList()
+            .Where(x => _locations == null || _locations.Any(y => y.StartsWith(x.Location)))
+            .ToList();
         }
     }
 }
