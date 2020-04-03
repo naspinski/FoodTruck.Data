@@ -1,7 +1,7 @@
 ﻿using Naspinski.Data.Interfaces;
 using Naspinski.FoodTruck.Data.Models.Payment;
 using Newtonsoft.Json;
-using square = Square.Connect.Model;
+using square = Square.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

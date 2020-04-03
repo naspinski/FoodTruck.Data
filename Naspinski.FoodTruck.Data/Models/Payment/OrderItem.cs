@@ -1,5 +1,5 @@
 ﻿using Naspinski.FoodTruck.Data.Models.Menu;
-using Square.Connect.Model;
+using Square.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -34,7 +34,7 @@ namespace Naspinski.FoodTruck.Data.Models.Payment
         {
             var additiveTaxRate = additiveTax / 100;
             var includedTaxRate = includedTax / 100;
-            var usd = Money.CurrencyEnum.USD;
+            var usd = "USD";
 
             var baseInCents = Convert.ToInt32((Price?.Amount ?? 0) * 100);
             var baseWithoutTaxInCents = Convert.ToInt32(baseInCents / (1 + includedTaxRate));
@@ -46,21 +46,19 @@ namespace Naspinski.FoodTruck.Data.Models.Payment
             var totalWithoutTaxInCents = Convert.ToInt32(subtotalInCents / (1 + includedTaxRate));
             var taxIncludedInCents = subtotalInCents - totalWithoutTaxInCents;
 
-            return new OrderLineItem()
-            {
-                BasePriceMoney = new Money(baseInCents, usd),
-                Quantity = Quantity.ToString(),
-                TotalTaxMoney = new Money(taxAdditiveInCents + taxIncludedInCents, usd),
-                TotalMoney = new Money(totalInCents, usd),
-                CatalogObjectId = Price?.MenuItem?.ItemId ?? string.Empty,
-                Name = Price?.MenuItem?.Name
-            };
+            return new OrderLineItem(
+                quantity: Quantity.ToString(),
+                name: Price?.MenuItem?.Name ?? "[name]",
+                basePriceMoney: new Money(baseInCents, usd),
+                totalTaxMoney: new Money(taxAdditiveInCents + taxIncludedInCents, usd),
+                totalMoney: new Money(totalInCents, usd),
+                catalogObjectId: Price?.MenuItem?.ItemId ?? string.Empty);
         }
 
-        public CreateOrderRequestLineItem ToCreateOrderRequestLineItem(decimal additiveTax, decimal includedTax)
-        {
-            var li = ToOrderLineItem(additiveTax, includedTax);
-            return new CreateOrderRequestLineItem(li.Name, li.Quantity, li.BasePriceMoney);
-        }
+        //public CreateOrderRequestLineItem ToCreateOrderRequestLineItem(decimal additiveTax, decimal includedTax)
+        //{
+        //    var li = ToOrderLineItem(additiveTax, includedTax);
+        //    return new CreateOrderRequestLineItem(li.Name, li.Quantity, li.BasePriceMoney);
+        //}
     }
 }
