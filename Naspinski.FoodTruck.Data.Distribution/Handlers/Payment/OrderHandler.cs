@@ -48,12 +48,6 @@ namespace Naspinski.FoodTruck.Data.Distribution.Handlers.Payment
             throw new NotImplementedException();
         }
 
-        [Obsolete("use new constructor now utilizing PriceAndQuantity")]
-        public Order Submit(string orderType, string name, string email, string phone, string address, string note, IEnumerable<PriceAndQuantity> priceAndQuantity, decimal tax, bool isProduction, bool deferSave = false)
-        {
-            return new Submit(_context, orderType, name, email, phone, address, note, priceAndQuantity, tax, isProduction, deferSave).ExecuteAndReturnResults();    
-        }
-
         public Order Submit(string orderType, string name, string email, string phone, string note, IEnumerable<PaymentModelItem> items, decimal tax, bool isProduction, string address = "", bool deferSave = false)
         {
             return new Submit(_context, orderType, name, email, phone, address, note, items, tax, isProduction, deferSave).ExecuteAndReturnResults();

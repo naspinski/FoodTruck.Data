@@ -8,18 +8,18 @@ namespace Naspinski.FoodTruck.Data.Access.Queries.Prices
 { 
     public class GetTotal : ResultQueryBase<FoodTruckContext, TotalResult>
     {
-        private IEnumerable<PriceAndQuantity> _priceAndQuantity;
+        private IEnumerable<PaymentModelItem> _paymentModelItems;
 
-        public GetTotal(FoodTruckContext context, IEnumerable<PriceAndQuantity> priceAndQuantity): base(context)
+        public GetTotal(FoodTruckContext context, IEnumerable<PaymentModelItem> priceAndQuantity): base(context)
         {
-            _priceAndQuantity = priceAndQuantity;
+            _paymentModelItems = priceAndQuantity;
         }
 
         protected override TotalResult InternalExecute()
         {
-            var priceIds = _priceAndQuantity.Select(y => y.PriceId).ToList();
+            var priceIds = _paymentModelItems.Select(y => y.PriceId).ToList();
             var prices = _context.Prices.Where(x => priceIds.Contains(x.Id)).Distinct().ToList();
-            var total = _priceAndQuantity.Sum(x => x.Quantity * prices.Single(y => y.Id == x.PriceId).Amount);
+            var total = _paymentModelItems.Sum(x => x.Quantity * prices.Single(y => y.Id == x.PriceId).Amount);
             return new TotalResult() { TotalInCents = Convert.ToInt32(total * 100) };
         }
     }
