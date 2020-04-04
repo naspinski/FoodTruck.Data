@@ -60,20 +60,18 @@ namespace Naspinski.FoodTruck.Data.Access.Commands.Orders
 
             foreach (var item in _items)
             {
-                var pq = _items.First(x => x.PriceId == item.PriceId);
-                var price = prices.First(x => x.Id == pq.PriceId);
-                order.TotalInCents += Convert.ToInt32(price.Amount * pq.Quantity * 100);
+                var price = prices.First(x => x.Id == item.PriceId);
+                order.TotalInCents += Convert.ToInt32(price.Amount * item.Quantity * 100);
                 var priceTypeString = price.PriceType != null && !string.IsNullOrWhiteSpace(price.PriceType.Name) ? $": {price.PriceType.Name}" : string.Empty;
                 var orderItem = new OrderItem()
                 {
                     Order = order,
-                    Quantity = pq.Quantity,
-                    PriceId = pq.PriceId,
+                    Quantity = item.Quantity,
+                    PriceId = item.PriceId,
                     Price = price,
-                    Description = $"[{pq.Quantity}] {price.MenuItem.Name}{priceTypeString} - ${price.Amount * pq.Quantity}"
+                    Description = $"{price.MenuItem.Name}{priceTypeString}",
+                    Note = item.Note
                 };
-                if (!string.IsNullOrWhiteSpace(item.Note))
-                    orderItem.Description += Environment.NewLine + $"   > {item.Note}"; 
                 _context.OrderItems.Add(orderItem);
             }
             

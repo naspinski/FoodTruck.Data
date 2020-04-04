@@ -102,8 +102,8 @@ namespace Naspinski.FoodTruck.Data.Models.Payment
             foreach (var line in Items)
             {
                 FullText += $" - {line.Description} {n}";
-                foreach (var comboPart in line.ComboParts)
-                    FullText += $"   > {comboPart} {n}";
+                if(!string.IsNullOrWhiteSpace(line.Note))
+                    FullText += $"   > {line.Note} {n}";
             }
             if (TaxInCents > 0)
             {
