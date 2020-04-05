@@ -89,6 +89,9 @@ namespace Naspinski.FoodTruck.Data.Models.Payment
             }
         }
 
+        [NotMapped]
+        public string PickUpInMinutes { get; set; }
+
 
         public void SetFullText()
         {
@@ -98,6 +101,9 @@ namespace Naspinski.FoodTruck.Data.Models.Payment
 
             if (IsDelivery)
                 FullText += $"{Address}{n}{n}";
+
+            if (!string.IsNullOrWhiteSpace(PickUpInMinutes) && PickUpInMinutes != "0")
+                FullText += $"Ready in {PickUpInMinutes} minutes{n}{n}";
 
             foreach (var line in Items)
             {

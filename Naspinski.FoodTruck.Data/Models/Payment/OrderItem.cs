@@ -1,9 +1,7 @@
 ﻿using Naspinski.FoodTruck.Data.Models.Menu;
 using Square.Models;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Naspinski.FoodTruck.Data.Models.Payment
 {
