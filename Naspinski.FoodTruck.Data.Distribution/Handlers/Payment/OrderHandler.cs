@@ -48,9 +48,9 @@ namespace Naspinski.FoodTruck.Data.Distribution.Handlers.Payment
             throw new NotImplementedException();
         }
 
-        public Order Submit(string orderType, string name, string email, string phone, string note, IEnumerable<PaymentModelItem> items, decimal tax, bool isProduction, string address = "", bool deferSave = false)
+        public Order Submit(string orderType, PaymentModel model, decimal tax, bool isProduction, string address = "", bool deferSave = false)
         {
-            return new Submit(_context, orderType, name, email, phone, address, note, items, tax, isProduction, deferSave).ExecuteAndReturnResults();
+            return new Submit(_context, orderType, model, tax, isProduction, address, deferSave).ExecuteAndReturnResults();
         }
 
         public Order TransactionApproved(int orderId, string transactionId)

@@ -19,22 +19,24 @@ namespace Naspinski.FoodTruck.Data.Access.Commands.Orders
         private readonly string _phone;
         private readonly string _address;
         private readonly string _note;
+        private readonly string _pickUpInMinutes;
         private readonly bool _isSandbox;
         private readonly bool _deferSave;
         private readonly decimal _taxRate;
         private readonly IEnumerable<PaymentModelItem> _items;
 
-        public Submit(FoodTruckContext context, string orderType, string name, string email, string phone, string address, string note, IEnumerable<PaymentModelItem> items, decimal tax, bool isProduction, bool defereSave = false) : base(context, name)
+        public Submit(FoodTruckContext context, string orderType, PaymentModel model, decimal tax, bool isProduction, string address = "", bool defereSave = false) : base(context, model.Email)
         {
             _orderType = orderType;
-            _email = email;
-            _phone = string.IsNullOrEmpty(phone) ? string.Empty : Regex.Match(phone, "^[0-9]+$").Value;
+            _email = model.Email;
+            _phone = string.IsNullOrEmpty(model.Phone) ? string.Empty : Regex.Match(model.Phone, "^[0-9]+$").Value;
             _address = string.Empty;
-            _note = note;
+            _note = model.Note;
+            _pickUpInMinutes = model.PickUpInMinutes;
             _taxRate = tax / 100;
             _isSandbox = !isProduction;
             _deferSave = defereSave;
-            _items = items;
+            _items = model.Items;
         }
 
         protected override Order InternalExecute()
