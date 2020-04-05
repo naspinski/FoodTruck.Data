@@ -10,6 +10,7 @@ namespace Naspinski.FoodTruck.Data.Access.AdditionalModels
         public string Phone { get; set; }
         public string Nonce { get; set; }
         public string Note { get; set; }
+        public string PickUpInMinutes { get; set; }
         public string BuyerVerificationToken { get; set; }
         public IEnumerable<PaymentModelItem> Items { get; set; }
     }
