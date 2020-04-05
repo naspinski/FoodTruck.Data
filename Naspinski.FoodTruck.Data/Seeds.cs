@@ -55,6 +55,8 @@ namespace Naspinski.FoodTruck.Data
                     new Setting() { Name = SettingName.OrderServiceText, DataType = Constants.DataType.LongString, Category = SettingCategory.ExternalApps, Value = string.Empty },
 
                     new Setting() { Name = SettingName.OrderNotificationEmails, DataType = Constants.DataType.LongString, Category = SettingCategory.OrderNotification, Value = string.Empty },
+                    new Setting() { Name = SettingName.StopOrderingMinutesToClose, DataType = Constants.DataType.Integer, Category = SettingCategory.OrderNotification, Value = "30" },
+                    new Setting() { Name = SettingName.IsTextOn, DataType = Constants.DataType.Boolean, Category = SettingCategory.OrderNotification, Value = false.ToString() },
                     new Setting() { Name = SettingName.OrderNotificationPhoneNumbers, DataType = Constants.DataType.LongString, Category = SettingCategory.OrderNotification, Value = string.Empty },
                     new Setting() { Name = SettingName.AutoNotificationDelayInMinutes, DataType = Constants.DataType.Integer, Category = SettingCategory.OrderNotification, Value = string.Empty },
 

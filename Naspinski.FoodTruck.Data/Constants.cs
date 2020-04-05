@@ -7,6 +7,8 @@ namespace Naspinski.FoodTruck.Data
         public static class SettingName
         {
             public const string IsOrderingOn = "IsOrderingOn";
+            public const string IsTextOn = "IsTextOn";
+            public const string StopOrderingMinutesToClose = "StopOrderingMinutesToClose";
             public const string LogoImageUrl = "LogoImageUrl";
             public const string BannerImageUrl = "BannerImageUrl";
             public const string FaviconImageUrl = "FaviconImageUrl";
