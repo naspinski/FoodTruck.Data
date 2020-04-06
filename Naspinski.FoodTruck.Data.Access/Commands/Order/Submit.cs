@@ -48,6 +48,7 @@ namespace Naspinski.FoodTruck.Data.Access.Commands.Orders
                 Phone = _phone,
                 Address = _address,
                 Note = _note,
+                PickUpInMinutes = _pickUpInMinutes,
                 IsSandbox = _isSandbox
             };
             order.Create(_user);

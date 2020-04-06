@@ -97,13 +97,13 @@ namespace Naspinski.FoodTruck.Data.Models.Payment
         {
             var n = Environment.NewLine;
 
+            if (!string.IsNullOrWhiteSpace(PickUpInMinutes) && PickUpInMinutes != "0")
+                FullText += $"We will try to have it ready in {PickUpInMinutes} minutes as requested{n}{n}";
+
             FullText += $"{OrderType} Order{n}{n}";
 
             if (IsDelivery)
                 FullText += $"{Address}{n}{n}";
-
-            if (!string.IsNullOrWhiteSpace(PickUpInMinutes) && PickUpInMinutes != "0")
-                FullText += $"Ready in {PickUpInMinutes} minutes{n}{n}";
 
             foreach (var line in Items)
             {
