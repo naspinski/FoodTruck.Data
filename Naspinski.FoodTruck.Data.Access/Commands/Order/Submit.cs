@@ -1,14 +1,11 @@
-﻿using Naspinski.Data.CommandQuery.Base;
-using Naspinski.Data.Helpers;
+﻿using Microsoft.EntityFrameworkCore;
+using Naspinski.Data.CommandQuery.Base;
 using Naspinski.FoodTruck.Data.Access.AdditionalModels;
 using Naspinski.FoodTruck.Data.Models.Payment;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using static Naspinski.FoodTruck.Data.Constants;
 
 namespace Naspinski.FoodTruck.Data.Access.Commands.Orders
 {
@@ -45,7 +42,7 @@ namespace Naspinski.FoodTruck.Data.Access.Commands.Orders
             {
                 OrderType = _orderType,
                 Email = _email,
-                Phone = _phone,
+                Phone = _phone,                
                 Address = _address,
                 Note = _note,
                 PickUpInMinutes = _pickUpInMinutes,
