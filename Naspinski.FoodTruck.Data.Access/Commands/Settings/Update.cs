@@ -34,8 +34,6 @@ namespace Naspinski.FoodTruck.Data.Access.Commands.Settings
                         setting.Value = (v == "true" || v == "on" || v == "1") ? true.ToString() : false.ToString();
                     }
                 }
-                else if (setting.DataType == Constants.DataType.Boolean && !setting.IsHidden)
-                    setting.Value = false.ToString();
 
                 setting.Update(_user);
             }
