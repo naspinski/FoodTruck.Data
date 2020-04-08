@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Naspinski.FoodTruck.Data
 {
@@ -27,6 +28,16 @@ namespace Naspinski.FoodTruck.Data
         public string SandboxApplicationId { get; set; }
         public string SandboxAccessToken { get; set; }
         public string SandboxLocationId { get; set; }
+
+        public IEnumerable<SquareLocation> Locations { get; set; }
+    }
+
+    public class SquareLocation
+    {
+        public string Name { get; set; }
+        public string ApplicationId { get; set; }
+        public string LocationIdId { get; set; }
+        public string AccessToken { get; set; }
     }
 
     public class ElmahSettings
