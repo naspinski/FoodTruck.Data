@@ -20,15 +20,19 @@ namespace Naspinski.FoodTruck.Data
 
     public class SquareSettings
     {
-        public IEnumerable<SquareLocation> Locations { get; set; }
+        public IEnumerable<SquareLocationComplete> Locations { get; set; }
+    }
+
+    public class SquareLocationComplete : SquareLocation
+    {
+        public string AccessToken { get; set; }
     }
 
     public class SquareLocation
     {
         public string Name { get; set; }
         public string ApplicationId { get; set; }
-        public string LocationIdId { get; set; }
-        public string AccessToken { get; set; }
+        public string LocationId { get; set; }
     }
 
     public class ElmahSettings
