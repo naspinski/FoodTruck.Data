@@ -15,6 +15,8 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.System
         [Required]
         public string Url { get; set; }
 
+        public bool IsDeleted { get; set; }
+
         public SiblingSiteModel() { }
 
         public SiblingSiteModel(SiblingSite model)
@@ -22,6 +24,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.System
             Id = model.Id;
             Name = model.Name;
             Url = model.Url;
+            IsDeleted = model.Deleted.HasValue;
         }
 
         public SiblingSite ToModel()

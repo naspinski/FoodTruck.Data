@@ -33,7 +33,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.System
             Location = model.Location;
             Type = model.Type;
             Category = model.Category;
-            IsDeleted = model.Deleted != null;
+            IsDeleted = model.Deleted.HasValue;
             Created = model.Created;
             Updated = model.Updated;
         }

@@ -46,7 +46,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Events
             Zip = model.Zip;
             Latitude = model.Latitude;
             Longitude = model.Longitude;
-            IsDeleted = model.Deleted != null;
+            IsDeleted = model.Deleted.HasValue;
         }
 
         public Location ToModel()

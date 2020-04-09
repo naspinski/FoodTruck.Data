@@ -64,7 +64,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Menu
             ImageId = model.ImageId;
             ImageLocation = model?.Image?.Location ?? string.Empty;
             SortOrder = model.SortOrder;
-            IsDeleted = model.Deleted != null;
+            IsDeleted = model.Deleted.HasValue;
             ItemId = model.ItemId;
         }
 

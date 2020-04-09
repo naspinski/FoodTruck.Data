@@ -90,7 +90,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Specials
             IsWednesday = model.IsWednesday;
             IsFriday = model.IsFriday;
             IsSaturday = model.IsSaturday;
-            IsDeleted = model.Deleted != null;
+            IsDeleted = model.Deleted.HasValue;
         }
 
         public Special ToModel()

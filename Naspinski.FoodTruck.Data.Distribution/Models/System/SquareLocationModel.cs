@@ -23,6 +23,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.System
         [Required]
         [Display(Name="Location ID")]
         public string LocationId { get; set; }
+        public bool IsDeleted { get; set; }
 
         public SquareLocationModel() { }
 
@@ -33,6 +34,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.System
             ApplicationId = model.ApplicationId;
             AccessToken = model.AccessToken;
             LocationId = model.LocationId;
+            IsDeleted = model.Deleted.HasValue;
         }
 
         public SquareLocation ToModel()

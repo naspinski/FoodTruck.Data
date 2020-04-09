@@ -38,7 +38,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Events
             Ends = model.Ends.HasValue ? model.Ends.Value.DateTime : (DateTime?)null;
             LocationId = model.LocationId;
             Location = model.Location == null ? new LocationModel() : new LocationModel(model.Location);
-            IsDeleted = model.Deleted != null;
+            IsDeleted = model.Deleted.HasValue;
         }
 
         public Event ToModel()

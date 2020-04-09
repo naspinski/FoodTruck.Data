@@ -23,7 +23,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.System
             Id = model.Id;
             Name = model.Name;
             Location = model.Location;
-            IsDeleted = model.Deleted != null;
+            IsDeleted = model.Deleted.HasValue;
         }
 
         public Image ToModel()
