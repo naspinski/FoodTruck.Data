@@ -6,7 +6,7 @@ using System.Linq;
 using Query = Naspinski.FoodTruck.Data.Access.Queries;
 using Command = Naspinski.FoodTruck.Data.Access.Commands;
 
-namespace Naspinski.FoodTruck.Data.Distribution.Handlers.Menu
+namespace Naspinski.FoodTruck.Data.Distribution.Handlers.System
 {
     public class SubscriptionHandler
     {

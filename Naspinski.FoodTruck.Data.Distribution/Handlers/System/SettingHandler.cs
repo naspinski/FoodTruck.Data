@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Query = Naspinski.FoodTruck.Data.Access.Queries;
 
-namespace Naspinski.FoodTruck.Data.Distribution.Handlers.Menu
+namespace Naspinski.FoodTruck.Data.Distribution.Handlers.System
 {
     public class SettingHandler : ICrudHandler<SettingModel, FoodTruckContext, SettingModel>
     {

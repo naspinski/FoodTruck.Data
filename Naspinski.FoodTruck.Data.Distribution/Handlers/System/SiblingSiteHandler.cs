@@ -6,7 +6,7 @@ using System.Linq;
 using Command = Naspinski.FoodTruck.Data.Access.Commands;
 using Query = Naspinski.FoodTruck.Data.Access.Queries;
 
-namespace Naspinski.FoodTruck.Data.Distribution.Handlers.Menu
+namespace Naspinski.FoodTruck.Data.Distribution.Handlers.System
 {
     public class SiblingSiteHandler : ICrudHandler<SiblingSiteModel, FoodTruckContext, SiblingSiteModel>
     {

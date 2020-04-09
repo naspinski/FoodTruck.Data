@@ -1,5 +1,6 @@
 ﻿using Naspinski.Data.Interfaces;
 using Naspinski.FoodTruck.Data.Distribution.Models.Menu;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Command = Naspinski.FoodTruck.Data.Access.Commands;
@@ -40,7 +41,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Handlers.Menu
 
         public void Restore(int id)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Naspinski.Data.Interfaces;
 using Naspinski.FoodTruck.Data.Distribution.Models.Menu;
+using System;
 using System.Collections.Generic;
 using Command = Naspinski.FoodTruck.Data.Access.Commands;
 
@@ -23,22 +24,22 @@ namespace Naspinski.FoodTruck.Data.Distribution.Handlers.Menu
 
         public ComboPartModel Get(int id)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public IEnumerable<ComboPartModel> GetAll(bool isDeleted = false)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void Restore(int id)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ComboPartModel Upsert(ComboPartModel model)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

@@ -32,5 +32,6 @@ namespace Naspinski.FoodTruck.Data
         public DbSet<DeliveryDestination> DeliveryDestinations { get; set; }
         public DbSet<Special> Specials { get; set; }
         public DbSet<SiblingSite> SiblingSites { get; set; }
+        public DbSet<SquareLocation> SquareLocations { get; set; }
     }
 }

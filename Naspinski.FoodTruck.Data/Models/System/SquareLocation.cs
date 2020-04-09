@@ -1,0 +1,23 @@
+﻿using Naspinski.Data.Model;
+using System.ComponentModel.DataAnnotations;
+
+namespace Naspinski.FoodTruck.Data.Models.System
+{
+    public class SquareLocation : AuditCreateUpdateDeleteBase
+    {
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public string ApplicationId { get; set; }
+
+        [Required]
+        public string AccessToken { get; set; }
+
+        [Required]
+        public string LocationId { get; set; }
+    }
+}

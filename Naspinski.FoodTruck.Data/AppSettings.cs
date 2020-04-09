@@ -18,23 +18,6 @@ namespace Naspinski.FoodTruck.Data
         public string CorsAddresses { get; set; }
     }
 
-    public class SquareSettings
-    {
-        public IEnumerable<SquareLocationComplete> Locations { get; set; }
-    }
-
-    public class SquareLocationComplete : SquareLocation
-    {
-        public string AccessToken { get; set; }
-    }
-
-    public class SquareLocation
-    {
-        public string Name { get; set; }
-        public string ApplicationId { get; set; }
-        public string LocationId { get; set; }
-    }
-
     public class ElmahSettings
     {
         public string ApiKey { get; set; }
