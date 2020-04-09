@@ -95,6 +95,7 @@ namespace Naspinski.FoodTruck.Data.Models.Payment
 
         public void SetFullText()
         {
+            FullText = string.Empty;
             var n = Environment.NewLine;
 
             if (!string.IsNullOrWhiteSpace(PickUpInMinutes) && PickUpInMinutes != "0")
