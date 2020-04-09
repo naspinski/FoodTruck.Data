@@ -99,7 +99,7 @@ namespace Naspinski.FoodTruck.Data.Models.Payment
             var n = Environment.NewLine;
 
             if (!string.IsNullOrWhiteSpace(PickUpInMinutes) && PickUpInMinutes != "0")
-                FullText += $"We will try to have it ready in {PickUpInMinutes} minutes as requested{n}{n}";
+                FullText += $"We will try to have it ready in {PickUpInMinutes} minutes as requested.{n}{n}";
 
             FullText += $"{OrderType} Order [ID: {Id}]{n}{n}";
 
