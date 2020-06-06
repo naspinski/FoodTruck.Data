@@ -32,6 +32,7 @@ namespace Naspinski.FoodTruck.Data.Access.Queries.Orders
                     && x.IsSandbox == _isSandbox
                     && x.Created >= _begins
                     && x.Created <= _ends
+                    && x.IsTransactionComplete
                 ).ToList();
         }
     }
