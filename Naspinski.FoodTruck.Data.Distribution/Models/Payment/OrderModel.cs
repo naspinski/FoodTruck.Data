@@ -45,9 +45,11 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Orders
                 return string.Format("{0:C}", TaxInCents / 100);
             }
         }
-
+        
         public DateTimeOffset Created { get; set; }
         public string CreatedString { get { return Created.DateTime.ToString(); } }
+        
+        public DateTimeOffset? Updated { get; set; }
 
         public DateTimeOffset? Made { get; set; }
         public bool IsMade { get { return Made.HasValue; } }
@@ -85,6 +87,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Orders
             Created = model.Created;
             Made = model.Made;
             Notified = model.Notified;
+            Updated = model.Updated;
 
             AdjustTimeZone(timezoneOffset);
         }
