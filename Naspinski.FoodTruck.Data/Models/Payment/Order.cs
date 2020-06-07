@@ -115,7 +115,7 @@ namespace Naspinski.FoodTruck.Data.Models.Payment
             if (TaxInCents > 0)
             {
                 FullText += $"{n}Subtotal: {SubtotalAsCurrency}";
-                FullText += $"{n}Tax: {TaxAsCurrency}";
+                FullText += $"{n}Tax & Fees: {TaxAsCurrency}";
             }
             FullText += $"{n}Total: {PriceAsCurrency}";
 
