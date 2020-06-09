@@ -53,9 +53,9 @@ namespace Naspinski.FoodTruck.Data.Distribution.Handlers.Payment
             return new Submit(_context, orderType, model, tax, isProduction, address, deferSave).ExecuteAndReturnResults();
         }
 
-        public Order TransactionApproved(int orderId, string transactionId)
+        public Order TransactionApproved(int orderId, string transactionId, string squareOrderId)
         {
-            return new CompleteTransaction(_context, orderId, transactionId).ExecuteAndReturnResults();
+            return new CompleteTransaction(_context, orderId, transactionId, squareOrderId).ExecuteAndReturnResults();
         }
 
         public OrderModel Upsert(OrderModel model)

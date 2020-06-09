@@ -15,6 +15,7 @@ namespace Naspinski.FoodTruck.Data.Models.Payment
         public string Email { get; set; }
         public string Address { get; set; }
         public string TransactionId { get; set; }
+        public string SquareOrderId { get; set; }
 
         [NotMapped]
         public bool IsTransactionComplete { get { return TransactionId != null && !string.IsNullOrWhiteSpace(TransactionId); } }

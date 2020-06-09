@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Naspinski.FoodTruck.Data;
 
 namespace Naspinski.FoodTruck.Data.Migrations
 {
     [DbContext(typeof(FoodTruckContext))]
-    partial class FoodTruckContextModelSnapshot : ModelSnapshot
+    [Migration("20200609003521_add-squareorderid")]
+    partial class addsquareorderid
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
