@@ -107,6 +107,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Specials
                 IsMonday = IsMonday,
                 IsTuesday = IsTuesday,
                 IsWednesday = IsWednesday,
+                IsThursday = IsThursday,
                 IsFriday = IsFriday,
                 IsSaturday = IsSaturday
             };
