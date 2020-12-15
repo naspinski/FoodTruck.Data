@@ -88,6 +88,7 @@ namespace Naspinski.FoodTruck.Data.Distribution.Models.Specials
             IsMonday = model.IsMonday;
             IsTuesday = model.IsTuesday;
             IsWednesday = model.IsWednesday;
+            IsThursday = model.IsThursday;
             IsFriday = model.IsFriday;
             IsSaturday = model.IsSaturday;
             IsDeleted = model.Deleted.HasValue;

@@ -16,7 +16,8 @@ namespace Naspinski.FoodTruck.Data.Access.Queries.Orders
 
         protected override Order InternalExecute()
         {
-            return _context.Orders.Include(x => x.Items).SingleOrDefault(x => x.SquareOrderId.Equals(_squareOrderId, System.StringComparison.InvariantCultureIgnoreCase));
+            return _context.Orders.Include(x => x.Items)
+                .SingleOrDefault(x => x.SquareOrderId == _squareOrderId);
         }
     }
 }
