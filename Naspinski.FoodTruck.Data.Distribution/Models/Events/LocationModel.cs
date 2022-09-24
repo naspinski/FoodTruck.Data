@@ -1,8 +1,8 @@
 ﻿using Naspinski.Data.Interfaces;
 using Naspinski.FoodTruck.Data.Models.Events;
-using Newtonsoft.Json;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Naspinski.FoodTruck.Data.Distribution.Models.Events
 {
