@@ -109,7 +109,7 @@ namespace Naspinski.FoodTruck.Data.Models.Payment
 
             foreach (var line in Items)
             {
-                FullText += $" - {line.Description} {n}";
+                FullText += $" - [{line.Quantity}] {line.Description} {n}";
                 if(!string.IsNullOrWhiteSpace(line.Note))
                     FullText += $"   > {line.Note} {n}";
             }
