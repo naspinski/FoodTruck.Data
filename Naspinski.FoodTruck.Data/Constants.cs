@@ -26,7 +26,7 @@ namespace Naspinski.FoodTruck.Data
             public const string Instagram = "Instagram";
             public const string LinkedIn = "LinkedIn";
             public const string Pinterest = "Pinterest";
-            public const string MerchLink = "MerchLink";
+            public const string MerchUrl = "MerchLink";
             public const string ContactEmail = "ContactEmail";
             public const string ContactPhone = "ContactPhone";
             public const string Keywords = "Keywords";

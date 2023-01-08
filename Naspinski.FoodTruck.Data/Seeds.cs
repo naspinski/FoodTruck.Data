@@ -53,7 +53,7 @@ namespace Naspinski.FoodTruck.Data
                     new Setting() { Name = SettingName.PostmatesLink, DataType = Constants.DataType.String, Category = SettingCategory.ExternalApps, Value = string.Empty },
                     new Setting() { Name = SettingName.GrubHubLink, DataType = Constants.DataType.String, Category = SettingCategory.ExternalApps, Value = string.Empty },
                     new Setting() { Name = SettingName.OrderServiceText, DataType = Constants.DataType.LongString, Category = SettingCategory.ExternalApps, Value = string.Empty },
-                    new Setting() { Name = SettingName.MerchLink, DataType = Constants.DataType.String, Category = SettingCategory.ExternalApps, Value = string.Empty },
+                    new Setting() { Name = SettingName.MerchUrl, DataType = Constants.DataType.String, Category = SettingCategory.ExternalApps, Value = string.Empty },
 
                     new Setting() { Name = SettingName.OrderNotificationEmails, DataType = Constants.DataType.LongString, Category = SettingCategory.OrderNotification, Value = string.Empty },
                     new Setting() { Name = SettingName.StopOrderingMinutesToClose, DataType = Constants.DataType.Integer, Category = SettingCategory.OrderNotification, Value = "30" },
