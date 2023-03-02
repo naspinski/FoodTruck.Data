@@ -28,16 +28,26 @@ steps:
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
     versioningScheme: 'byBuildNumber'
 
-- task: NuGetCommand@2
+# - task: NuGetCommand@2
+#   inputs:
+#     command: 'pack'
+#     packagesToPack: '**/*.csproj'
+#     versioningScheme: 'byBuildNumber'
+- task: DotNetCoreCLI@2
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     nuGetFeedType: 'internal'
-    publishVstsFeed: 'f3d19341-e5c4-4a06-a8aa-10859192eae8/4b17404e-3135-455e-a753-8c68ee894ef1'
+
+# - task: NuGetCommand@2
+#   inputs:
+#     command: 'push'
+#     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+#     nuGetFeedType: 'internal'
+#     publishVstsFeed: 'f3d19341-e5c4-4a06-a8aa-10859192eae8/4b17404e-3135-455e-a753-8c68ee894ef1'
