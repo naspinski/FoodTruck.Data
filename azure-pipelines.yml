@@ -29,6 +29,7 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 - task: DotNetCoreCLI@2
+  displayName: 'dotnet pack'
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
@@ -40,16 +41,17 @@ steps:
 #     packagesToPack: '**/*.csproj'
 #     versioningScheme: 'byBuildNumber'
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    nuGetFeedType: 'internal'
-    vstsFeed: 'f3d19341-e5c4-4a06-a8aa-10859192eae8/4b17404e-3135-455e-a753-8c68ee894ef1'
-
-# - task: NuGetCommand@2
+# - task: DotNetCoreCLI@2
 #   inputs:
 #     command: 'push'
-#     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+#     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
 #     nuGetFeedType: 'internal'
-#     publishVstsFeed: 'f3d19341-e5c4-4a06-a8aa-10859192eae8/4b17404e-3135-455e-a753-8c68ee894ef1'
+#     vstsFeed: 'f3d19341-e5c4-4a06-a8aa-10859192eae8/4b17404e-3135-455e-a753-8c68ee894ef1'
+
+- task: NuGetCommand@2
+  displayName: 'nuget push'
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: 'f3d19341-e5c4-4a06-a8aa-10859192eae8/4b17404e-3135-455e-a753-8c68ee894ef1'
