@@ -25,6 +25,7 @@ namespace Naspinski.FoodTruck.Data
                     new Setting() { Name = SettingName.Tagline, DataType = Constants.DataType.String, Category = SettingCategory.General, Value = "tagline" },
                     new Setting() { Name = SettingName.TimeZoneOffsetFromUtcInHours, DataType = Constants.DataType.Integer, Category = SettingCategory.General, Value = (-6).ToString() },
                     new Setting() { Name = SettingName.Location, DataType = Constants.DataType.DropdownId, Category = SettingCategory.General, Value = string.Empty },
+                    new Setting() { Name = SettingName.MenuTopText, DataType = Constants.DataType.LongString, Category = SettingCategory.General, Value = string.Empty },
 
                     new Setting() { Name = SettingName.OrderConfirmationEmailSubject, DataType = Constants.DataType.String, Category = SettingCategory.Contact, Value = "Thank you" },
                     new Setting() { Name = SettingName.ContactPreHeader, DataType = Constants.DataType.String, Category = SettingCategory.Contact, Value = "contact pre header" },

@@ -51,6 +51,7 @@ namespace Naspinski.FoodTruck.Data
             public const string DoorDashLink = "DoorDashLink";
             public const string PostmatesLink = "PostmatesLink";
             public const string OrderServiceText = "OrderServiceText";
+            public const string MenuTopText = "MenuTopText";
 
             public const string SundayOpen = "SundayOpen";
             public const string SundayClose = "SundayClose";
